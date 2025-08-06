@@ -51,9 +51,10 @@ FROM netflix
 group by type
 
 SELECT count(type) as moice_count,(
-									SELECT count(type) as TV_show_count
-									FROM netflix
-									WHERE type = 'TV show' )
+                                   SELECT count(type) as TV_show_count
+                                   FROM netflix
+                                   WHERE type = 'TV show'
+			           )
 FROM netflix
 WHERE type = 'Movie';
 ```
